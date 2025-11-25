@@ -1,0 +1,68 @@
+# --- Node / Express Server (serveur) ---
+serveur/node_modules/
+serveur/npm-debug.log*
+serveur/yarn-debug.log*
+serveur/yarn-error.log*
+serveur/pnpm-debug.log*
+
+# Logs
+serveur/logs/
+serveur/*.log
+
+# Environment files
+serveur/.env
+serveur/.env.local
+serveur/.env.*.local
+
+# Build outputs
+serveur/dist/
+serveur/build/
+serveur/.tmp/
+
+# --- Node / Express Server ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Logs
+logs/
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+/dist/
+/build/
+.tmp/
+
+# --- React (client) ---
+# React build
+client/node_modules/
+client/build/
+client/.env
+client/.env.local
+client/.env.*.local
+
+# CRA specific
+client/.eslintcache
+client/public/*.map
+
+# Cache
+.client/.cache/
+.cache/
+.client/.cache/
+.cache/
+
+# Misc
+.DS_Store
+*.swp
+*.swo
+
+# IDEs
+.vscode/
+.idea/
