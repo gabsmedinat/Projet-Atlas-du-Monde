@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react'
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
-import { getContenuElement } from '../../libUtilitaires'
-
 import ListePays from '../ListePays/ListePays-composant'
+
 
 const Pays = () => {
     const [pays, setPays] = useState([]);                                            // Liste de pays obtenus par le serveur
-
     const [searchInput, setSearchInput] = useState('');                              // Contient seulement la valeur du input
     const [continentSelect, setContinentSelect] = useState('Tous les continents');   // Contient seulement le continent choisi
 
@@ -45,6 +43,19 @@ const Pays = () => {
     const handlePaysChange = (evenement) => setSearchInput(evenement.target.value.toLowerCase());
     const handleContinentChange = (evenement) => setContinentSelect(evenement.target.value);
 
+    /*PARTIE DU TRI */
+    const triSelection = (evenement) => {
+        const typeTri = evenement.target.value;
+        typeTri === "1" ? setPays(pays.toSorted((a, b) => {
+            let x = a.nom.toLowerCase();
+            let y = b.nom.toLowerCase();
+            if (x < y) { return -1; }
+            if (x > y) { return 1; }
+            return 0;
+        })) : setPays(pays.toSorted((b, a) => a.population - b.population))
+
+    }
+
     return (
         <div>
             <div className="mx-5 my-3 justify-content-center">
@@ -60,7 +71,7 @@ const Pays = () => {
                             <option value="Europe">Europe</option>
                             <option value="Océanie">Océanie</option>
                         </Form.Select>
-                        <Form.Select >
+                        <Form.Select onChange={triSelection} >
                             <option value="1">Trier par ordre alphabètique</option>
                             <option value="2">Trier par population</option>
                         </Form.Select>
