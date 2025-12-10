@@ -1,0 +1,24 @@
+.navbar {
+    background-color: #A8BBA3;
+}
+
+.conteneur {
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+.navbarTitre {
+    display: inline;
+}
+
+
+.zoneVide {
+    margin-left: auto;
+}
+
+.navbarElement {
+    color: #FFF;
+    font-size: 18px;
+}
